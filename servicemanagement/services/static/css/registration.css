@@ -1,0 +1,74 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+}
+
+
+.container{
+    width: 40%; /* Adjust the width as needed */
+    margin: 30px auto;
+    padding: 30px; /* Adjust the padding as needed */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+
+form label {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+/* Apply styles to form input fields */
+form input,
+form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* Apply styles to form submit button */
+form input[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 18px;
+    width: 100%; /* Make button full width */
+}
+
+/* Apply styles to form submit button on hover */
+form input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Apply styles to error messages */
+.text-primary small{
+    color: #0a16f2;
+    font-size: 15px;
+    margin-top: 5px;
+    align-items: center;
+}
+
+/* Apply styles to the link for existing users */
+.text-primary a {
+    color: #ff2200;
+}
+
+/* Apply styles to the link for existing users on hover */
+.text-primary a:hover {
+    text-decoration: underline;
+}
+
+.register-title {
+    text-align: center;
+    color: #343a40;
+    font-size: 24px;
+}

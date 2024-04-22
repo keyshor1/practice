@@ -1,0 +1,46 @@
+{% extends 'app/nav.html' %}
+{% load static %}
+{% block link %}
+
+<link rel="stylesheet" href="{% static  'css/staff.css' %}">
+
+{% endblock link %}
+{% block title %}staff{% endblock title %}
+
+{% block staff %}
+
+<section class="staff-container">
+    <h1 class="h-primary">Staff Details</h1>
+    <div class="staff-grid">
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Staff Name</th>
+                    <th scope="col">Profession</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Summary</th>
+                    <th scope="col">Registration Date</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for staff in staffs %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ staff.staffname }}</td>
+                    <td>{{ staff.profession }}</td>
+                    <td>{{ staff.staffage }}</td>
+                    <td>{{ staff.staffaddress }}</td>
+                    <td>{{ staff.staffsummary }}</td>
+                    <td>{{ staff.registerdate }}</td>
+                    <td>{{ staff.staffstatus }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock staff %}

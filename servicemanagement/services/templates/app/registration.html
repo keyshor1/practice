@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+    <title>{% block title %}Login{% endblock title %}</title>
+</head>
+
+<body>
+    <div class="container ">
+        <h2 class="register-title">User Registration</h3>
+        <form action="" method="post" novalidate class="shadow p-5">
+            {% csrf_token %}
+            {% for fm in form %}
+            {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small>
+            <br>
+            {% endfor %}
+            <input type="submit" value="Submit" class="btn btn-outline-success w-100"> <br><br>
+
+            <div class="text-primary">
+                <small>Existing User ? <a href="{% url 'login' %}">Login Now</a></small>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

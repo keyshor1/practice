@@ -1,0 +1,149 @@
+{% extends 'app/nav.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block home %}
+    <section id="home">
+        <h1 class="h-primary">
+            Welcome To Helping Hands
+
+        </h1>
+        <p class="paragraph">
+            Searching for the best cleaning services company in Nepal? WE HELP YOUR BUSINESS TO SHINE, Without
+            compromising the Quality and Chemicals. You have landed to the correct page. Let us help you clean your
+            workplace or home or anywhere else with our years of experienced, skilled employees and advanced
+            technologies.
+        </p>
+
+    </section>
+
+    <!-- to make gap -->
+    <div class="gap"></div>
+
+
+    <section id="services-container">
+        <h1 class="h-primary capitalize center">
+            our services
+        </h1>
+        <div class="services">
+            {% for serv in service %}
+            <div class="box">
+                <img src="{{serv.services_image.url}}">
+                <h2 class="h-secondary center capitalize">{{serv.servicename}} Service</h2>
+                <p class="paragraph">{{serv.servicedescription}}</p>
+            </div>
+            {% endfor %}  
+        </div>
+    </section>
+
+    <!-- to make gap -->
+    <div class="gap"></div>
+
+
+    <section id="form-container">
+        <h1 class="h-primary capitalize center">Request for service</h1>
+        <p class="paragraph center">Make Request</p><br>
+        <!-- your_template.html -->
+
+<section id="form-container">
+    <h1 class="h-primary capitalize center">Request for service</h1>
+    <p class="paragraph center">Make Request</p><br>
+    <form method="post" action="{% url 'book_service' %}">
+        {% csrf_token %}
+        <div id="form">
+            <label for="Name">Name : </label><br>
+            <input type="text" id="Name" name="Name" placeholder="{{ request.user }}" readonly><br><br>
+            <label for="Address">Address : </label>
+            <input type="Address" id="Address" name="Address" placeholder="Enter your location"><br><br>
+            <label for="email">E-mail : </label><br>
+            <input type="text" name="email" id="email" placeholder="Enter your E-mail address "><br><br>
+            <label for="contact">Contact : </label><br>
+            <input type="text" name="contact" id="contact" placeholder="Enter your phone number"><br><br>
+            <label for="date">Booking : </label><br>
+            <input type="date" id="date" name="bookingdate"><br><br>
+            <label for="services">Services : </label>
+            <select name="services" id="services">
+                <option value="Maid">Maid Service</option>
+                <option value="Carpet">Carpet Cleaning</option>
+                <option value="Tile">Tile And Marble Cleaning</option>
+            </select><br><br>
+        </div>
+        <div class="inputBox">
+            <button class="btn" type="submit">Send Order</button>
+        </div>
+    </form>
+    
+    
+</section>
+
+    </section>
+
+    <!-- to make gap -->
+    <div class="gap"></div>
+
+
+    <!-- contact -->
+    <section id="contacts">
+        <div class="contents">
+            <h2 class="h-primary center capitalize">Contact Us</h2>
+            <p class="paragraph">One call cleans it all</p>
+
+        </div>
+        <div class="containers">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon"><i class="fas fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>13 Street,<br>Kathmandu,Nepal</p>
+
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>+977 234-345-4567</p>
+
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>19931995yoonmin@temporary-mail.net</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="contactForm">
+                <form>
+                    <h1 class="h-primary center capitalize">Send Message</h2>
+                        <div class="inputBox">
+                            <label for="Name">Full Name : </label>
+                            <input type="text" name="" required="required" placeholder="Enter your full name">
+                        </div>
+                        <div class="inputBox">
+                            <label for="Email">Email : </label>
+                            <input type="text" name="" required="required" placeholder="enter your email address">
+
+                        </div>
+                        <div class="inputBox">
+                            <label for="msg">Msg : </label>
+                            <textarea required="required">Enter data</textarea>
+                        </div>
+                        <div class="inputBox">
+                            <button class="btn" type="submit">Send Feedback</button>
+                        </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="gap"></div>
+    <footer id="footer">
+        <p class="paragraph center">Designed and developed by kishor shrestha</p>
+    </footer>
+
+    {% endblock home %}
